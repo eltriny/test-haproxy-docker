@@ -1,1 +1,1 @@
-docker push eltriny/testproxy:v1
+docker push eltriny/test-haproxy-docker:v1
