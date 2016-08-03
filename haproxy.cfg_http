@@ -17,16 +17,15 @@ defaults
 
 frontend app-in
     bind        *:80
-    mode        tcp
-    option      tcplog
-    option      dontlognull
-    option      redispatch
+    mode        http
+    option      httplog
+    option      http-server-close
     stats       enable
     stats       refresh 30s
     stats       uri     /haproxy_stats
     default_backend servers
 
 backend servers
-   mode tcp
+   mode http
    balance roundrobin
-   server server0 10.40.100.102:3306
+   server server0 10.40.100.104:9093
