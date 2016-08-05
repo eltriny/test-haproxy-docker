@@ -37,39 +37,32 @@ frontend app-in
     acl url_acl_crowd path_beg /crowd
     use_backend crowd if url_acl_crowd
 
-<<<<<<< HEAD
-backend servers
-   mode http
-   balance roundrobin
-   server server0 10.40.100.47:8080 
-=======
 backend pms
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.43:10000
+  server    server0     10.40.100.40:10000
 
 backend tde
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.43:20000
+  server    server0     10.40.100.40:20000
   
 backend wiki
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.44:30000
+  server    server0     10.40.100.41:30000
   
 backend stash
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.44:40000
+  server    server0     10.40.100.41:40000
   
 backend jenkins
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.44:50000
+  server    server0     10.40.100.41:50000
   
 backend crowd
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.43:8095
->>>>>>> branch 'master' of https://github.com/eltriny/test-haproxy-docker.git
+  server    server0     10.40.100.40:8095
