@@ -28,4 +28,4 @@ frontend app-in
 backend servers
    mode http
    balance roundrobin
-   server server0 10.40.100.45:80
+   server server0 10.40.100.105:9999
