@@ -40,29 +40,29 @@ frontend app-in
 backend pms
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.40:10000
+  server    server0     10.40.100.43:10000
 
 backend tde
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.40:20000
-  
+  server    server0     10.40.100.43:20000
+
 backend wiki
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.41:30000
-  
+  server    server0     10.40.100.44:30000
+
 backend stash
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.41:40000
-  
+  server    server0     10.40.100.44:40000
+
 backend jenkins
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.41:50000
-  
+  server    server0     10.40.100.44:50000
+
 backend crowd
   mode      http
   balance   roundrobin
-  server    server0     10.40.100.40:8095
+  server    server0     10.40.100.43:8095
