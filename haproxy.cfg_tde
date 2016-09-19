@@ -38,6 +38,8 @@ frontend app-in
     use_backend crowd if url_acl_crowd
     acl url_acl_gitlab path_beg /gitlab
     use_backend gitlab if url_acl_gitlab
+    acl url_acl_elastic path_beg /elastic
+    use_backend elastic if url_acl_elastic
 
 backend pms
   mode      http
@@ -73,3 +75,8 @@ backend gitlab
   mode      http
   balance   roundrobin
   server    server0     10.40.100.44:45000
+
+backend elastic
+  mode      http
+  balance   roundrobin
+  server    server0     10.40.100.43:9200
