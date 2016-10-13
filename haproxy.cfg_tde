@@ -40,6 +40,8 @@ frontend app-in
     use_backend gitlab if url_acl_gitlab
     acl url_acl_elastic path_beg /elastic
     use_backend elastic if url_acl_elastic
+    acl url_acl_sonarqube path_beg /sonarqube
+    use_backend sonarqube if url_acl_sonarqube
 
 backend pms
   mode      http
@@ -80,3 +82,8 @@ backend elastic
   mode      http
   balance   roundrobin
   server    server0     10.40.100.43:9200
+
+backend sonarqube
+  mode      http
+  balance   roundrobin
+  server    server0     10.40.100.44:9001
